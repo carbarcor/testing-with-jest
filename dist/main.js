@@ -26,7 +26,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sta
   \**********************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
-eval("const _ = __webpack_require__(/*! underscore */ \"./node_modules/underscore/modules/index-all.js\");\r\n\r\nlet stack = [];\r\n\r\n// Lägger ett element överst i stacken\r\nexports.push = function (x) {\r\n    stack.push(x);\r\n};\r\n\r\n// Returnerar det översta elementet i stacken och tar bort det\r\nexports.pop = function () {\r\n    return stack.pop();\r\n}\r\n\r\n// Returnerar det översta elementet i stacken\r\nexports.peek = function () {\r\n    return stack[0]; // Det här är medvetet felaktigt\r\n}\n\n//# sourceURL=webpack://testing-with-jest/./src/stack.js?");
+eval("const _ = __webpack_require__(/*! underscore */ \"./node_modules/underscore/modules/index-all.js\");\r\n\r\nlet stack = [];\r\n\r\n// Lägger ett element överst i stacken\r\nexports.push = function (x) {\r\n    stack.push(x);\r\n};\r\n\r\n// Returnerar det översta elementet i stacken och tar bort det\r\nexports.pop = function () {\r\n    return stack.pop();\r\n}\r\n\r\n// Returnerar det översta elementet i stacken\r\nexports.peek = function () {\r\n    return _.last(stack); // Det här är medvetet felaktigt\r\n}\n\n//# sourceURL=webpack://testing-with-jest/./src/stack.js?");
 
 /***/ }),
 

@@ -1,14 +1,11 @@
 const { Builder, By, until } = require('selenium-webdriver');
-const path = require('path');
-const url = require('url');
 require('geckodriver');
 
-const localPath = path.join(__dirname, '..', 'dist', 'index.html');
-const fileUnderTest = url.pathToFileURL(localPath).href;
+const fileUnderTest = 'file://' + __dirname.replace(/ /g, '%20') + '/../dist/index.html';
 const defaultTimeout = 10000;
 let driver;
 jest.setTimeout(1000 * 60 * 5); // 5 minuter
-console.log(fileUnderTest); //debug
+
 // Det här körs innan vi kör testerna för att säkerställa att Firefox är igång
 beforeAll(async () => {
 console.log(fileUnderTest);

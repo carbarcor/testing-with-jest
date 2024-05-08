@@ -40,9 +40,9 @@ test('omfattande stack-operationer test', () => {
     stack.push('date');
 
     // Kontrollerar ordning och beteende för pop
-    expect(stack.pop()).toBe('datex');    // Tar bort 'datex' medvetet fel skrivit
-    expect(stack.pop()).toBe('carroty');  // Tar bort 'carroty' medvetet fel skrivit
-    expect(stack.pop()).toBe('applez');   // Tar bort 'applez' medvetet fel skrivit
+    expect(stack.pop()).toBe('date');    // Tar bort 'date' 
+    expect(stack.pop()).toBe('carrot');  // Tar bort 'carrot' 
+    expect(stack.pop()).toBe('apple');   // Tar bort 'apple' 
 
     // Kontrollerar att stacken är tom
     expect(stack.peek()).toBeUndefined();

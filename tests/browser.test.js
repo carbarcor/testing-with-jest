@@ -38,7 +38,7 @@ describe('Testing multiple pushes and peek functionality', () => {
         // Lägg till element i stacken
         const itemsToAdd = ['Bananer', 'Äpplen', 'Päron']; 
         for (let item of itemsToAdd) {
-            let pushButton = await driver.findElement(By.id('pop')); //i syftet att testa buttom
+            let pushButton = await driver.findElement(By.id('push')); 
             await pushButton.click();
             let alert = await driver.switchTo().alert();
             await alert.sendKeys(item);

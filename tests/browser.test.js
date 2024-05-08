@@ -32,3 +32,21 @@ describe('Clicking "Pusha till stacken"', () => {
 		await alert.accept();
 	});
 });
+
+describe('Testing multiple pushes and peek functionality', () => {
+    test('The top of stack should reflect the last pushed item', async () => {
+        // Lägg till element i stacken
+        const itemsToAdd = ['Bananer', 'Äpplen', 'Päron']; 
+        for (let item of itemsToAdd) {
+            let pushButton = await driver.findElement(By.id('pop')); //i syftet att testa buttom
+            await pushButton.click();
+            let alert = await driver.switchTo().alert();
+            await alert.sendKeys(item);
+            await alert.accept();
+        }
+
+        // Kontrollera att det översta elementet på stacken är det senast tillagda
+        let topOfStack = await driver.findElement(By.id('top_of_stack')).getText();
+        expect(topOfStack).toEqual(itemsToAdd[itemsToAdd.length - 1]);  // Päron
+    });
+});
